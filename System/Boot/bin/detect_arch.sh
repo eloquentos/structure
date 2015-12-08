@@ -60,7 +60,7 @@ menuentry "Eloquent OS" --class arch {
         iso_args="$APPEND"
         loopback loop \${iso_path}
         linux (loop)$LINUX \${live_args} \${custom_args} \${iso_args}
-        initrd (loop)$INITRD /System/Boot/iso/additional-initramfs/initramfs
+        initrd (loop)$INITRD
 }
 EOM
 
