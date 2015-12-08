@@ -26,7 +26,7 @@ LIVE=$( cat /proc/mounts  | grep "$LIVEMNT" | cut -d " " -f 1 | head -n 1) # /de
 mount "$LIVE" -o remount,rw
 UUID=$(blkid "$LIVE" -s UUID -o value)
 echo $UUID
-ISOS=$(find "$LIVEMNT"/boot/iso -name "*.iso")
+ISOS=$(find "$LIVEMNT"/System/Boot/iso -name "*.iso")
 
 for ISO in $ISOS; do
   echo $ISO
@@ -62,15 +62,15 @@ done
 # For Ubuntu
 grub-script-check /tmp/grub.cfg && (
 # Backup the previous version
-cp "$LIVEMNT"/boot/grub/grub.cfg "$LIVEMNT"/boot/grub/grub.cfg.old
-cp /tmp/grub.cfg "$LIVEMNT"/boot/grub/grub.cfg
+cp "$LIVEMNT"/System/Boot/grub/grub.cfg "$LIVEMNT"/System/Boot/grub/grub.cfg.old
+cp /tmp/grub.cfg "$LIVEMNT"/System/Boot/grub/grub.cfg
 echo "Successfully updated bootloader configuration"
 )
 
 # For openSUSE
 grub2-script-check /tmp/grub.cfg && (
 # Backup the previous version
-cp "$LIVEMNT"/boot/grub/grub.cfg "$LIVEMNT"/boot/grub/grub.cfg.old
-cp /tmp/grub.cfg "$LIVEMNT"/boot/grub/grub.cfg
+cp "$LIVEMNT"/System/Boot/grub/grub.cfg "$LIVEMNT"/System/Boot/grub/grub.cfg.old
+cp /tmp/grub.cfg "$LIVEMNT"/System/Boot/grub/grub.cfg
 echo "Successfully updated bootloader configuration"
 )
