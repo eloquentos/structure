@@ -48,7 +48,7 @@ echo "* APPEND $APPEND"
 
 read -r -d '' GRUBENTRY << EOM
 
-menuentry "$ISONAME - $LIVETOOL $LIVETOOLVERSION" --class arch {
+menuentry "Eloquent OS" --class arch {
         iso_path="/System/Boot/iso/$ISONAME"
         search --no-floppy --file \${iso_path} --set
         live_args="for-arch --> img_loop=\${iso_path} img_dev=/dev/disk/by-uuid/$UUID max_loop=256"
