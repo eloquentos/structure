@@ -1,21 +1,13 @@
 # git ls-files --others --exclude-from=.gitignore
 # Lines that start with '#' are comments.
+
 *~
 *.iso
-.Trash-999
-boot/deltadir/lib/firmware
-EFI/
-boot/grub/fonts/
-boot/grub/i386-pc/
-boot/grub/locale/
-boot/grub/x86_64-efi/
-boot/deltadir/usr/bin/*
+/System/Boot/EFI/
+/System/Boot/grub/fonts/
+/System/Boot/grub/i386-pc/
+/System/Boot/grub/locale/
+/System/Boot/grub/x86_64-efi/
 *ExtensionImage
-*/initramfs
-*/grub.cfg
-.Spotlight-V100/
-.TemporaryItems/
 ._*
-.fseventsd/
-initramfs
 grub.cfg
