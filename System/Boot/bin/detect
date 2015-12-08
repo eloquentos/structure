@@ -30,14 +30,6 @@ trap finish EXIT
 # also for Unity in Ubuntu 11.04 and later
 gsettings set org.gnome.desktop.media-handling automount 'false' 2>/dev/null
 
-cat > /tmp/grub.cfg <<EOF
-insmod part_msdos
-menuentry "Old" {
-	configfile /boot/grub/grub.cfg.old
-}
-
-EOF
-
 LIVEMNT=$(df -P "$HERE" | awk 'END{print $NF}') # mountpoint
 LIVE=$( cat /proc/mounts  | grep "$LIVEMNT" | cut -d " " -f 1 | head -n 1) # /dev/sdXX
 
