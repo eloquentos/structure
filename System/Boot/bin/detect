@@ -1,12 +1,5 @@
 #!/bin/bash
 
-LOCALE="de_DE.UTF-8" # Format: "de_DE.UTF-8"
-LOCALE_NODOT=$(echo $LOCALE | cut -d "." -f 1) # Format: "de_DE"
-KEYBOARD="de" # Format: "de"
-TIMEZONE="Europe/Berlin" # Format: "Europe/Berlin"
-USERNAME="me" # Format: "me"
-HOSTNAME="host" # Format: "host"
-
 HERE=$(dirname $(readlink -f $0))
 
 . "$HERE"/detect_debian_live.sh || exit 1
