@@ -20,7 +20,7 @@ MOUNTPOINT="$1"
 # Make sure this ISO is one that this script understands - otherwise return asap
 #
 
-ls "$MOUNTPOINT"/arch 2>/dev/null || return
+ls "$MOUNTPOINT"/eloquent 2>/dev/null || return
 
 echo "$ISONAME" assumed to be ARCH
 
