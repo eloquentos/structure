@@ -48,6 +48,10 @@ echo "* APPEND $APPEND"
 
 read -r -d '' GRUBENTRY << EOM
 
+set default=0
+set timeout=3
+set timeout_style=hidden
+
 menuentry "Eloquent OS" --class arch {
         iso_path="/System/Boot/iso/$ISONAME"
         search --no-floppy --file \${iso_path} --set
