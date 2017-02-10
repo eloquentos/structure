@@ -55,11 +55,11 @@ set timeout_style=hidden
 menuentry "Eloquent OS" --class arch {
         iso_path="/System/Images/$ISONAME"
         search --no-floppy --file \${iso_path} --set
-        live_args="for-arch --> img_loop=\${iso_path} img_dev=/dev/disk/by-uuid/$UUID max_loop=256"
-        custom_args=""
+        live_args="img_loop=\${iso_path} img_dev=/dev/disk/by-uuid/$UUID max_loop=256"
+        eloquent_args="quiet splash loglevel=0 rd.systemd.show_status=false rd.udev.log-priority=0"
         iso_args="$APPEND"
         loopback loop \${iso_path}
-        linux (loop)$LINUX \${live_args} \${custom_args} \${iso_args}
+        linux (loop)$LINUX \${live_args} \${eloquent_args} \${iso_args}
         initrd (loop)$INITRD
 }
 EOM
